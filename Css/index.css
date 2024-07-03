@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #e6f2ff !important;
+
+}
+
+.comman-radius{
+    border-radius: 8px; 
+
+}
+
+.nav-btn{
+    background-color: #ebc4e9;
+}
+
+.side-data{
+    width: 20%;
+    height: 100vh;
+}
+
+.page{
+    width: 90%;
+    margin: 10px auto 0px ;
+    /* border-radius: 8px;  */
+}
+
+.page:hover{
+    background-color: #71b0f5;
+    transition: .5s;
+}
+
+.customer-btn{
+    padding: 8px 14px;
+    /* border-radius: 8px; */
+    border: 1px solid #fff;
+    outline: none;
+}
+.search-input{
+    outline: none;
+}
+
+.table-wapper{
+    width: 89% !important;
+    background: #fff;
+    border-radius: 20px;
+}
+
+h5{
+    background-color: transparent;
+}
+
+.nikki{
+    display: block !important;
+}
