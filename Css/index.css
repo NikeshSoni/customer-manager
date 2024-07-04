@@ -56,3 +56,11 @@ h5{
 .nikki{
     display: block !important;
 }
+
+.image{
+    width: 16px;
+}
+
+.comman-button{
+    background-color: #f3faff;
+}

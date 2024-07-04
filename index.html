@@ -15,19 +15,24 @@
         <div class="main-wapper d-flex">
             <div class="side-data border border-1">
                 <div class="p-4">
+                    <img src="./assets/management-box.png" alt="management" />
                     <strong>Customer Management</strong>
                 </div>
                 <div class="page-wapper w-100">
-                    <div class="page p-2 comman-radius">
+                    <div class="page p-2 d-flex gap-2 comman-radius">
+                        <img class="image" src="./assets/home.png" alt="Dashboard" />
                         <h6 class="mb-0">Dashboard</h6>
                     </div>
-                    <div class="page p-2 comman-radius">
-                        <h6 class="mb-0">Customer</h6>
+                    <div class="page p-2 list-group-item list-group-item-primary d-flex gap-2 comman-radius">
+                        <img class="image" src="./assets/customer.png" alt="Customer"/>
+                        <h6 class="mb-0 ">Customer</h6>
                     </div>
-                    <div class="page p-2 comman-radius">
+                    <div class="page p-2 d-flex gap-2 comman-radius">
+                        <img class="image" src="./assets/box.png" alt="Products" />
                         <h6 class="mb-0">Products</h6>
                     </div>
-                    <div class="page p-2 comman-radius">
+                    <div class="page p-2 d-flex gap-2 comman-radius">
+                        <img class="image" src="./assets/order.png" alt="Orders"/>
                         <h6 class="mb-0">Orders</h6>
                     </div>
                 </div>
@@ -35,6 +40,7 @@
 
             <div class="main w-100">
                 <header>
+                    
                     <nav class="w-100 d-flex p-3 justify-content-between shadow-sm">
                         <div class="d-flex align-items-center">
                             <h5 class="p-0 m-0">Customer Management</h5>
@@ -48,17 +54,19 @@
                             </button>
 
                             <!-- Modal -->
-                            <div class="modal fade example" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                                aria-hidden="true">
+                            <div class="modal fade example" id="exampleModal" tabindex="-1"
+                                aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <div>
                                                 <h1 class="modal-title fs-5 " id="exampleModalLabel">
-                                                    Add Customer
+                                                    <!-- Data Get From Js -->
                                                 </h1>
                                                 <div class="">
-                                                    <p>Enter The Deatail of new Customer</p>
+                                                    <p class="discription">
+                                                        <!-- Data Get From Js -->
+                                                    </p>
                                                 </div>
                                             </div>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
@@ -72,12 +80,11 @@
                                             </div>
                                             <div class="d-flex gap-4 mt-2 align-items-center">
                                                 <label>Email:</label>
-                                                <input class="form-control" type="text" id="email"
-                                                    placeholder="Email">
+                                                <input class="form-control" type="text" id="email" placeholder="Email">
                                             </div>
                                             <div class="d-flex gap-2 mt-2 align-items-center">
                                                 <label>Number:</label>
-                                                <input class="form-control" type="number" id="age" placeholder="Number">
+                                                <input class="form-control" type="number" id="number" placeholder="Number">
                                             </div>
                                             <div class="d-flex gap-2 mt-2 align-items-center">
                                                 <label>Date of Birth:</label>
@@ -86,7 +93,8 @@
                                             </div>
                                             <div class="d-flex gap-2 mt-2 align-items-center">
                                                 <label>Address:</label>
-                                                <input class="form-control" type="text" id="address" placeholder="Address">
+                                                <input class="form-control" type="text" id="address"
+                                                    placeholder="Address">
                                             </div>
                                         </div>
                                         <div class="modal-footer">
@@ -122,7 +130,7 @@
                             </tr>
                         </thead>
                         <tbody id="employeeTable">
-                             
+
                         </tbody>
                     </table>
                 </div>
