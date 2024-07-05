@@ -1,82 +1,80 @@
-
-
-
 const EmployeeData = [
     {
         id: 1, firstName: "Nikesh", number: 1512345167,
         email: 'nikesh@gmail.com',
-        date: "2001/11/21", address: 'chembur'
+        date: "2001-11-21", address: 'chembur'
     },
     {
         id: 2, firstName: "Nikki", 
         number: 1512345167, email: 'nikki@gmail.com',
-        date: "2001/11/21", address: 'chembur'
-
+        date: "2001-11-21", address: 'chembur'
     },
     {
         id: 3, firstName: "Harry",
         number: 1512345167, email: 'harry@gmail.com',
-        date: "2001/11/21", address: 'chembur'
-
+        date: "2001-11-21", address: 'chembur'
     }
 ];
 
-let store = document.querySelector('.search-input').value
-
-// store.addEventListener('onchange' , function name(params) {
-
-// })
-
 let data = [...EmployeeData];
 let currentId = 0;
+let storeValue = document.querySelector('.search-input').value;
 
+document.querySelector('.search-input').addEventListener('keyup', function() {
+    let value = this.value.toLowerCase();
+    filterTable(value);
+});
+
+function filterTable(value) {
+    const filteredData = data.filter(item => {
+        return (
+            item.firstName.toLowerCase().includes(value) ||
+            item.email.toLowerCase().includes(value) ||
+            item.address.toLowerCase().includes(value)
+        );
+    });
+    renderTable(filteredData);
+}
 
 
 document.getElementById('saveButton').addEventListener('click', handleSave);
 document.getElementById('updateButton').addEventListener('click', handleUpdate);
 document.getElementById('clearButton').addEventListener('click', handleClear);
 
-function renderTable() {
+
+function renderTable(filteredData = data) {
     const tbody = document.getElementById('employeeTable');
     tbody.innerHTML = '';
-    data.forEach((item) => {
+    filteredData.forEach((item) => {
         const row = document.createElement('tr');
-
         row.innerHTML = `
-                    <td>${item.firstName}</td>
-                     <td>${item.email}</td>
-                    <td>${item.number}</td>
-                    <td>${item.date}</td>
-                    <td>${item.address}</td>
-
-                    <td>
-                        <button 
-                            class="border border-dark model-store customer-btn comman-button comman-radius"
-                             data-bs-toggle="modal" data-bs-target="#exampleModal"
-                             onclick="handleEdit(${item.id})">
-                                <img class="image" src="./assets/pencil-lined.png" alt="delete" />
-                        </button>
-                        
-                        <button 
-                            class="model-store customer-btn comman-button comman-radius border border-dark" 
-                            onclick="handleDelete(${item.id})">
-
-                            <img class="image" src="./assets/delete.png" alt="delete" />
-                        </button>
-                    </td>
-                `;
+            <td>${item.firstName}</td>
+            <td>${item.email}</td>
+            <td>${item.number}</td>
+            <td>${item.date}</td>
+            <td>${item.address}</td>
+            <td>
+                <button 
+                    class="border border-dark model-store customer-btn comman-button comman-radius"
+                    data-bs-toggle="modal" data-bs-target="#exampleModal"
+                    onclick="handleEdit(${item.id})">
+                        <img class="image" src="./assets/pencil-lined.png" alt="edit" />
+                </button>
+                
+                <button 
+                    class="model-store customer-btn comman-button comman-radius border border-dark" 
+                    onclick="handleDelete(${item.id})">
+                    <img class="image" src="./assets/delete.png" alt="delete" />
+                </button>
+            </td>
+        `;
         tbody.appendChild(row);
     });
 
-    data.filter((items) => {
-        console.log(items);
-
-
-        if (items.firstName && items.email && number) {
-
-        }
-    })
+   
 }
+
+// displayValue()
 
 // saveHandel Was Here 
 
@@ -87,7 +85,6 @@ function handleSave() {
     const date = document.getElementById('date').value;
     const address = document.getElementById('address').value;
 
-
     // 
     if (firstName === '' || email === '' || address === '' || number <= 0) {
         alert("Enter valid details");
@@ -97,18 +94,19 @@ function handleSave() {
     const newEmployee = {
         id: data.length + 1,
         firstName,
-        // lastName,
         number,
         email,
         date,
         address
-
     };
 
     data.push(newEmployee);
     renderTable();
     handleClear();
 }
+
+console.log(data);
+
 
 // edit code was here 
 
@@ -151,11 +149,10 @@ function handleUpdate() {
         return;
     }
 
-
     const index = data.findIndex(item => item.id === currentId);
     if (index > -1) {
+        
         data[index].firstName = firstName;
-        // data[index].lastName = lastName;
         data[index].number = number;
         data[index].email = email;
         data[index].date = date;
@@ -178,7 +175,6 @@ function handleDelete(id) {
 
 function handleClear() {
     document.getElementById('firstName').value = '';
-    // document.getElementById('lastName').value = '';
     document.getElementById('number').value = '';
     document.getElementById('email').value = '';
     document.getElementById('date').value = '';
@@ -186,8 +182,6 @@ function handleClear() {
     currentId = 0;
     document.getElementById('saveButton').style.display = 'inline-block';
     document.getElementById('updateButton').style.display = 'none';
-
-
 }
 
 renderTable()

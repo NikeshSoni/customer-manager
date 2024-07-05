@@ -11,42 +11,89 @@
 </head>
 
 <body>
-    <div class="main-container">
+    <div class="main-container ">
         <div class="main-wapper d-flex">
             <div class="side-data border border-1">
-                <div class="p-4">
-                    <img src="./assets/management-box.png" alt="management" />
-                    <strong>Customer Management</strong>
+                <div class="responsive-bar d-none d-lg-block">
+                    <div class="page-wapper w-100">
+                        <div class="p-4">
+                            <img src="./assets/management-box.png" alt="management" />
+                            <strong>Customer Management</strong>
+                        </div>
+                        <div class="page p-2 d-flex gap-2 comman-radius">
+                            <img class="image" src="./assets/home.png" alt="Dashboard" />
+                            <h6 class="mb-0">Dashboard</h6>
+                        </div>
+                        <div class="page p-2 list-group-item list-group-item-primary d-flex gap-2 comman-radius">
+                            <img class="image" src="./assets/customer.png" alt="Customer" />
+                            <h6 class="mb-0 ">Customer</h6>
+                        </div>
+                        <div class="page p-2 d-flex gap-2 comman-radius">
+                            <img class="image" src="./assets/box.png" alt="Products" />
+                            <h6 class="mb-0">Products</h6>
+                        </div>
+                        <div class="page p-2 d-flex gap-2 comman-radius">
+                            <img class="image" src="./assets/order.png" alt="Orders" />
+                            <h6 class="mb-0">Orders</h6>
+                        </div>
+                    </div>
                 </div>
-                <div class="page-wapper w-100">
-                    <div class="page p-2 d-flex gap-2 comman-radius">
-                        <img class="image" src="./assets/home.png" alt="Dashboard" />
-                        <h6 class="mb-0">Dashboard</h6>
+
+
+
+                <div class="responsive-sidebar d-lg-none">
+                    <div class="mt-4 ms-2" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling"
+                        aria-controls="offcanvasScrolling">
+                        <img class="sidebar" src="./assets/menu.png" alt="menu" srcset="">
+                        <!-- menu -->
                     </div>
-                    <div class="page p-2 list-group-item list-group-item-primary d-flex gap-2 comman-radius">
-                        <img class="image" src="./assets/customer.png" alt="Customer"/>
-                        <h6 class="mb-0 ">Customer</h6>
-                    </div>
-                    <div class="page p-2 d-flex gap-2 comman-radius">
-                        <img class="image" src="./assets/box.png" alt="Products" />
-                        <h6 class="mb-0">Products</h6>
-                    </div>
-                    <div class="page p-2 d-flex gap-2 comman-radius">
-                        <img class="image" src="./assets/order.png" alt="Orders"/>
-                        <h6 class="mb-0">Orders</h6>
+
+                    <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
+                        id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+
+                        <div class="page-wapper w-100">
+                            <div class="p-4 d-flex justify-content-between">
+                                <div class="">
+                                    <img src="./assets/management-box.png" alt="management" />
+                                    <strong>Customer Management</strong>
+                                </div>
+
+                                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="page p-2 d-flex gap-2 comman-radius">
+                                <img class="image" src="./assets/home.png" alt="Dashboard" />
+                                <h6 class="mb-0">Dashboard</h6>
+                            </div>
+                            <div class="page p-2 list-group-item list-group-item-primary d-flex gap-2 comman-radius">
+                                <img class="image" src="./assets/customer.png" alt="Customer" />
+                                <h6 class="mb-0 ">Customer</h6>
+                            </div>
+                            <div class="page p-2 d-flex gap-2 comman-radius">
+                                <img class="image" src="./assets/box.png" alt="Products" />
+                                <h6 class="mb-0">Products</h6>
+                            </div>
+                            <div class="page p-2 d-flex gap-2 comman-radius">
+                                <img class="image" src="./assets/order.png" alt="Orders" />
+                                <h6 class="mb-0">Orders</h6>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
+
+
             <div class="main w-100">
                 <header>
-                    
+
                     <nav class="w-100 d-flex p-3 justify-content-between shadow-sm">
                         <div class="d-flex align-items-center">
                             <h5 class="p-0 m-0">Customer Management</h5>
                         </div>
                         <div class="">
-                            <input type="text" class="p-2 search-input comman-radius" placeholder="Search Customer" />
+                            <input type="text" class="p-2 search-input comman-radius"
+                                placeholder="Search Customer" />
 
                             <button type="button" id="adding" data-bs-toggle="modal" data-bs-target="#exampleModal"
                                 class="customer-btn comman-radius nav-btn">
@@ -84,7 +131,8 @@
                                             </div>
                                             <div class="d-flex gap-2 mt-2 align-items-center">
                                                 <label>Number:</label>
-                                                <input class="form-control" type="number" id="number" placeholder="Number">
+                                                <input class="form-control" type="number" id="number"
+                                                    placeholder="Number">
                                             </div>
                                             <div class="d-flex gap-2 mt-2 align-items-center">
                                                 <label>Date of Birth:</label>
@@ -106,9 +154,9 @@
                                                 style="display: none;">Update</button>
 
 
-                                            <button type="button" id="saveButton" class="btn btn-primary">
+                                            <button type="button" id="saveButton" class="btn  nav-btn">
                                                 Save
-                                                changes</button>
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -118,7 +166,7 @@
                 </header>
 
                 <div class="p-3 table-wapper container mt-4 mx-auto">
-                    <table class="table mx-auto table-hover p-4">
+                    <table class="table table-responsive mx-auto table-hover p-4">
                         <thead>
                             <tr class="pb-2 ">
                                 <th>Name</th>

@@ -5,7 +5,6 @@
 }
 body{
     background-color: #e6f2ff !important;
-
 }
 
 .comman-radius{
@@ -14,12 +13,16 @@ body{
 }
 
 .nav-btn{
-    background-color: #ebc4e9;
+    background-color: #ebc4e9 !important;
 }
 
 .side-data{
     width: 20%;
     height: 100vh;
+
+    @media (max-width:991px) {
+        width: 5%;
+    }
 }
 
 .page{
@@ -63,4 +66,9 @@ h5{
 
 .comman-button{
     background-color: #f3faff;
+}
+
+.sidebar{
+    height: 24px;
+    width: 24px;
 }
