@@ -29,7 +29,7 @@ function filterTable(value) {
     const filteredData = data.filter(item => {
         return (
             item.firstName.toLowerCase().includes(value) ||
-            item.email.toLowerCase().includes(value) ||
+            item.email.toLowerCase().includes(value) ||     
             item.address.toLowerCase().includes(value)
         );
     });
@@ -58,13 +58,13 @@ function renderTable(filteredData = data) {
                     class="border border-dark model-store customer-btn comman-button comman-radius"
                     data-bs-toggle="modal" data-bs-target="#exampleModal"
                     onclick="handleEdit(${item.id})">
-                        <img class="image" src="./assets/pencil-lined.png" alt="edit" />
+                        <img class="image" src="./pencil-lined.png" alt="edit" />
                 </button>
                 
                 <button 
                     class="model-store customer-btn comman-button comman-radius border border-dark" 
                     onclick="handleDelete(${item.id})">
-                    <img class="image" src="./assets/delete.png" alt="delete" />
+                    <img class="image" src="./delete.png" alt="delete" />
                 </button>
             </td>
         `;
@@ -103,6 +103,12 @@ function handleSave() {
     data.push(newEmployee);
     renderTable();
     handleClear();
+
+   var close = document.querySelector(".comman-class");
+
+   close.style.display = 'none !important';
+
+//    document.getElementById('#exampleModal')
 }
 
 console.log(data);
